@@ -1,0 +1,53 @@
+  <div class="sv_card">
+
+               
+                <div class="features">
+                    <h1>Description</h1>
+                    <ul>
+                        <li>IDE: <label><?= $row['IDE']?></label></li>
+                        <li>Backend Language used: <label><?= $row['Language']?></label></li>
+                        <li>Frontend Language used: <label><?= $row['FrontLanguage']?></label></li>
+                        <li>Additional Languages: <label><?= $row['Additional'] ?></label></li>
+                        <li>Operating System: <label><?= $row['OS'] ?></label></li>
+                        <li>Type: <label><?= $row['Type'] ?></label></li>
+                        <li>Github: <label><a href="<?= $row['GIT']?>"><?= $row['GIT']?></a></label></li>
+                    </ul>
+                  </div>
+                    
+                  <div class="screenshot">
+                    <h1>Screenshots</h1>
+                    <ul class="picture">
+                             
+                        <?php
+                         $id= mysqli_real_escape_string($con, $_GET['id']);
+                         $shotquery = "SELECT * FROM screenshots WHERE projectId = '$project_id'";
+                         $shot_result = mysqli_query($con, $shotquery);
+
+                         if(mysqli_num_rows($shot_result) > 0)
+                         {
+                           
+                            foreach($shot_result as $shot_row)
+                            {
+                                ?>
+                                      <li class="image">
+                                      <img src="Admin/uploads/<?php echo $shot_row['picture']?>">
+                                      </li>  
+                                <?php
+                            }
+                         }
+                      ?>
+                       
+                                               
+                     </ul>
+                    </div>
+
+                </div>
+                <div class="video_card">
+                    <h1>Video</h1>
+                <div class="video">
+                        <video  controls>
+                            <source src="Admin/videos/<?= $row['Video']?>" >
+                        </video>
+                </div>
+                </div>
+            </div>

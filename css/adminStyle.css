@@ -1,0 +1,984 @@
+@charset "utf-8";
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    font-family: 'Cormorant Garamond', serif;
+}
+body{
+    padding: 0px;
+    margin:0px;
+    background: #edf1fd;
+}
+nav {
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 100;
+    width: 75px;
+    height: 100%;
+    background: orange;
+    padding: 8px 16px;
+    transition: all 0.2s ease;
+}
+nav.expand{
+    width: 250px;
+    transition: all 0.2s ease;
+}
+.menu{
+    margin-top: 20px;
+    height: 100%;
+}
+.menu li{
+    position: relative;
+    margin: 8px 0;
+    list-style: none;
+}
+.menu i{
+    color: #fff;
+    height: 50px;
+    min-width: 50px;
+    font-size: 23px;
+    text-align: center;
+    line-height: 50px;
+}
+.menu input{
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    outline: none;
+    height: 40px;
+    width: 50%;
+    border: none;
+    border-radius: 12px;
+    background: #2b2b2b;
+    padding: 0;
+}
+nav.expand .menu input{
+    width: 100%;
+    padding: 0 20px 0 40px;
+}
+
+.menu li:hover a{
+    background: #7a6767;
+}
+.menu li a{
+    display: flex;
+  
+    width: 100%;
+    border-radius: 12px;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+}
+.menu li a .nav-item{
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+    white-space: nowrap;
+    display: none;
+    transition: all 0.2s ease;
+  
+}
+.menu li a .tooltip{
+    position: absolute;
+    top: -20px;
+    left: calc(100% + 15px);
+    z-index: 3;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    font-size: 15px;
+    white-space: nowrap;
+    padding: 6px 14px;
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0s;
+}
+nav li a:hover .tooltip{
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.2s ease;
+    top: 50%;
+    transform: translateY(-50%);
+}
+nav.expand .tooltip{
+    display: none;
+}
+nav.expand .menu li a .nav-item{
+    display: block;
+    transition: all 0.2s ease;
+}
+.menu li:hover a .nav-item{
+    color: #fff;
+}
+.menu .search-btn{
+    position: absolute;
+    top:50%;
+    left: 0;
+    transform: translateY(-25px);
+    font-size: 25px;
+    color: #fff;
+    background: #131313;
+    transition: all 0.2s ease;
+}
+nav.expand .search-btn{
+    background: transparent;
+}
+.btn-menu{
+    position: absolute;
+    color: #f4f7ff;
+    top: 15;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 23px;
+    cursor: pointer;
+    margin-right: 25px;
+}
+nav.expand .btn-menu{
+    margin-right: 0;
+}
+nav.expand .logo, nav.expand .dash{
+    opacity: 1;
+}
+.logo{
+    color: #f4f7ff;
+    font-size: 3rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 25px;
+    margin-top: 20px;
+    transition: all 0.2s ease;
+    opacity: 0;
+}
+.dash{
+    color: #645454;
+    font-size: 1rem;
+    margin-left: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: all 0.2s ease;
+    opacity: 0;
+}
+.m-title{
+    color: #7a6767;
+    font-size: 18px;
+   
+    margin-left: 15px;
+    opacity: 0;
+}
+nav.expand .m-title{
+    opacity: 1;
+    margin-top: 30px;
+}
+.line{
+    margin-top: 10px;
+    border: 0.01px solid #a18a8a;
+    border-radius: -30px;
+    width: 90%;
+    margin: 0 10px 0 10px;
+}
+.login-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.login-container .header-text{
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 60px;
+    color: rgb(0,0,56);
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.form-box .eyes:hover{
+    color: gray;
+}
+
+.form-box{
+    background: #fff;
+  padding: 30px 50px;
+  border-radius: 10px;
+  text-align: center;
+  justify-content: center;
+}
+
+.single-input{
+    width: 270px;
+    border:1px solid orange;
+   justify-self: center;
+    display: flex;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    color: rgb(5, 5, 134);
+  }
+  .single-input i{
+    padding: 8px 16px;
+    color: rgb(5, 5, 134);
+  }
+  .single-input i:hover{
+    color: gray;
+    cursor: pointer;
+  }
+  .single-input input{
+    border:0px solid orange;
+    width: 100%;
+    outline: none;
+    height: 30px;
+    font-size: 18px;
+  }
+
+.submit-btn{
+    border: none;
+    margin-top: 30px;
+   
+ }
+ .submit-btn input{
+    background: orange;
+    color: #fff;
+    cursor: pointer; 
+ }
+ .submit-btn input:hover{
+    background: #131313;
+ }
+.wrapper{
+	position: absolute;
+	height: 100%;
+	left: 78px;
+	width: calc(100% - 78px);
+	transition: all 0.4s ease;
+	z-index: 6;
+
+}   
+nav.expand ~ .wrapper{
+    left: 250px;
+    width: calc(100% - 250px);
+}
+
+.upload{
+    margin: 20px 100px 20px 100px;
+    text-align: center;
+    padding: 30px;
+    background: #fff;
+}
+
+.upload h1{
+    font-family: Poppins;
+    font-size: 40px;
+    margin: 40px;
+    letter-spacing: 2px;
+    color: #292929; 
+    text-align: center;
+}
+.uploadForm{
+    text-align: left;
+    width: 800px;
+    margin: 0 auto 0 auto;
+}
+.uploadForm .upload-details{
+    display: flex;
+    margin-top: 15px;
+}
+.uploadForm .upload-details :first-child{
+    margin-right: 10px;
+ }
+ .uploadForm .upload-details :last-child{
+    margin-left: 10px;
+ }
+.uploadForm .field input
+{
+    height: 40px;
+    width: 380px;
+    border: none;
+    outline: none;
+    background: #ededed;
+    color: rgb(5, 5, 134);
+    border: 1px orange solid;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 10px;
+}
+.uploadForm input[type="file"]{
+    width: 790px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px orange solid;
+    border-radius: 5px;
+}
+.uploadForm label{
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+.uploadForm select{
+    height: 40px;
+    width: 380px;
+    border: none;
+    outline: none;
+    background: #ededed;
+    color: rgb(5, 5, 134);
+    font-size: 18px;
+    padding: 10px;
+    border: 1px orange solid;
+    border-radius: 5px;
+
+    
+}
+.uploadForm textarea{
+    height: 100px;
+    font-size: 18px;
+    padding: 10px;
+    width: 790px;
+    border: none;
+    outline: none;
+    align-self: center;
+    background: #ededed;
+    color: rgb(5, 5, 134);
+    margin: 10px 10px 0 10px;
+    border: 1px orange solid;
+    border-radius: 5px;
+}
+.uploadForm .Button{
+    text-align: center;
+    background: orange;
+    cursor: pointer;
+    color: white;
+    width: 250px;
+    height: 50px;
+    border: none;
+    margin-top: 30px;
+    margin-left: 250px;
+    margin-right: 250px;
+}
+.uploadForm .Button:hover{
+    background: #131313;
+}
+input#file-input{
+    display: none;
+}
+.u-img{
+    width: 70px;
+    height: 70px;
+}
+.drag-container{
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+}
+.drag-area {
+    width: 350px;
+    height: 350px;
+    
+    border-radius: 5px;
+    border: 2px dashed #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px 10px 0 10px;
+}
+.drag-area.active{
+    border: 2px solid #000;
+}
+.drag-area .icon{
+    width: 130px;
+    height: 130px;
+    background: url('/images/upload-image.png');
+    background-size: cover;
+}
+.drag-area header{
+    font-size: 30px;
+    font-weight: 500;
+    color: #6c707c;
+}
+.drag-area header{
+    font-size: 30px;
+    font-weight: 500;
+    color: #6c707c;
+}
+.drag-area span{
+    font-size: 25px;
+    font-weight: 500;
+    color: #6c707c;
+    margin: 10px 0 15px 0;
+}
+.drag-area button{
+    padding: 10px 25px;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: #000;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff; 
+}
+.drag-area img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.drag-area2 {
+    width: 350px;
+    height: 350px;
+    border-radius: 5px;
+    border: 2px dashed #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px 10px 0 10px;
+}
+.drag-area2.active{
+    border: 2px solid #000;
+}
+.drag-area2 .icon{
+    width: 130px;
+    height: 130px;
+    background: url('/images/upload.png');
+    background-size: cover;
+}
+.drag-area2 header{
+    font-size: 30px;
+    font-weight: 500;
+    color: #6c707c;
+}
+.drag-area2 header{
+    font-size: 30px;
+    font-weight: 500;
+    color: #6c707c;
+}
+.drag-area2 span{
+    font-size: 25px;
+    font-weight: 500;
+    color: #6c707c;
+    margin: 10px 0 15px 0;
+}
+.drag-area2 button{
+    padding: 10px 25px;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: #000;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff; 
+}
+.drag-area2 img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.drag-area3 {
+    width: 350px;
+    height: 350px;
+    border-radius: 5px;
+    border: 2px dashed #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.drag-area3.active{
+    border: 2px solid #000;
+}
+.drag-area3 .icon{
+    width: 130px;
+    height: 130px;
+    background: url('/images/upload.png');
+    background-size: cover;
+}
+.drag-area3 header{
+    font-size: 30px;
+    font-weight: 500;
+    color: #6c707c;
+}
+.drag-area3 header{
+    font-size: 30px;
+    font-weight: 500;
+    color: #6c707c;
+}
+.drag-area3 span{
+    font-size: 25px;
+    font-weight: 500;
+    color: #6c707c;
+    margin: 10px 0 15px 0;
+}
+.drag-area3 button{
+    padding: 10px 25px;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: #000;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff; 
+}
+.drag-area3 img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.project-container{
+ max-width: 1500px;
+ margin: 50px 80px 0 80px;
+ height: auto;
+ background: #fff;
+ align-items: center;
+ text-align: center;
+ 
+}
+.project-container h1{
+    font-size: 55px;
+    color: #131313;
+}
+.project-container2{
+    max-width: 1500px;
+ margin: 50px 80px 0 80px;
+ height: auto;
+ background: #fff;
+ align-items: center;
+ text-align: center;
+}
+.project-container2 h1{
+    font-size: 55px;
+    color: #131313;
+}
+.holderTwo h1{
+    color: #131313;
+    font-size: 55px;
+    text-align: center;
+}
+.table {
+	border:1px solid #eeeeee;
+    margin: 20px 10px 10px 10px;
+}
+.table .table-data img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+.table .table-data .add{
+    display: flex;
+}
+.projectv-btn{
+    background: rgb(211, 211, 14);
+    color: white;
+    margin-right: 5px;
+    font-size: 15px;
+    width: 125px;
+    height: 20px;
+    border: none;
+    outline: none;
+    margin-top: 5px;
+}
+.projectv-btn:hover{
+    background:#131313;
+}
+.projects-btn{
+    background: rgb(78, 78, 29);
+    color: white;
+    margin-right: 5px;
+    font-size: 15px;
+    width: 125px;
+    height: 20px;
+    border: none;
+    outline: none;
+    margin-top: 5px;
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left:0;
+    top: 0;
+    margin: 100px 600px 60px 600px;
+    width: 500px; /* Full width */
+    height: 500px; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #e6bebe; /* Black w/ opacity */
+    padding-top: 60px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 2% 20px;
+    box-sizing: border-box; 
+  }
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: green;
+        margin: 5% 0 15% 0; /* 5% from the top, 15% from the bottom and centered */
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+      }
+      
+      /* The Close Button (x) */
+      .close {
+        position: absolute;
+        right: 25px;
+        top: 0;
+        color: white;
+        font-size: 35px;
+        font-weight: bold;
+      }
+      
+      .close:hover,
+      .close:focus {
+        color: red;
+        cursor: pointer;
+      }
+      .add-feature{
+        text-align: center;
+      }
+      .modal h2{
+        font-size: 50px;
+        font-weight: 800;
+        color: #131313;
+        white-space: 2px;
+
+      }
+      .add-feature h3{
+        font-size: 25px;
+        color: #131313;
+        white-space: 2px;  
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      .add-feature .field input{
+        height: 40px;
+        width: 380px;
+        border: none;
+        outline: none;
+        background: #ededed;
+        border: 1px solid #333;
+        color: #6c707c;
+        font-size: 18px;
+        padding: 10px;
+      }
+      .add-feature .f-label{
+        margin-top: 15px;
+        font-size: 25px;
+        margin-left: -320px;
+        margin-top: 15px;
+    }
+
+      .add-feature input[type="submit"]{
+        margin-top: 20px;
+        text-align: center;
+        height: 35px;
+        width: 250px;
+        background: #131313;
+        color: #fff;
+
+      }
+      
+      /* Add Zoom Animation */
+      .animate {
+        -webkit-animation: animatezoom 0.6s;
+        animation: animatezoom 0.6s
+      }
+      
+      @-webkit-keyframes animatezoom {
+        from {-webkit-transform: scale(0)} 
+        to {-webkit-transform: scale(1)}
+      }
+        
+      @keyframes animatezoom {
+        from {transform: scale(0)} 
+        to {transform: scale(1)}
+      }
+.projects-btn:hover{
+    background:#131313;
+}
+.table-header {
+	display:flex;
+	width:100%;
+	background:#000;
+	padding:(24px /2 * 1.5) 0;
+}
+
+.table-row {
+	display:flex;
+	width:100%;
+	padding:(24px / 2 * 1.5) 0;
+	
+	
+}
+.table-row:nth-of-type(odd) {
+    background:#eeeeee;
+}
+.table-data, .header__item {
+	flex: 1 1 20%;
+	text-align:center;
+}
+
+.header__item {
+	text-transform:uppercase;
+}
+
+.filter__link {
+	color:white;
+	text-decoration: none;
+	position:relative;
+	display:inline-block;
+	padding-left: 24px;
+	padding-right:24px;
+}
+	
+.filter__link::after {
+		content:'';
+		position:absolute;
+		right:-(24px / 2 * 1.5);
+		color:white;
+		font-size: 24px / 2;
+		top: 50%;
+		transform: translateY(-50%);
+}
+	
+.filter__link.desc::after {
+		content: '(desc)';
+	}
+
+.filter__link.asc::after {
+		content: '(asc)';
+	}
+/*Working with top information for dashboard*/
+.top-information{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    background: #fff;
+    margin-top: 0px;
+}
+.sideBar{
+    width: 450px;
+    height: 100px;
+    margin-left:60%;
+    display: flex;
+    box-sizing: border-box;
+}
+.sideBar img{
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    margin: 10px 10px ;
+}
+.sideBar label{
+    color: rgb(0,0,56);
+    font-size: 25px;
+    margin: 20px 20px;
+}
+.sideBar .button{
+    margin-top: 20px;
+    background: orange;
+    height: 20px;
+    width: 120px;
+    text-align: center;
+    text-decoration: none;
+    padding-top: 1px;
+    font-size: 15px;
+    color: white;
+}
+
+#curve_chart{
+    border-radius: 20px;
+}
+
+.holder{
+    max-width: 1500px;
+    height: auto;
+    display: flex;
+    margin: 30px auto 0 auto;
+     
+}
+.holder .graphOne{
+    background: #fff;
+    margin: 20px 20px;
+    width: 900px;
+    height: 500px;
+    border-radius: 20px;
+}
+.holder .graphTwo{
+    background: #fff;
+    margin: 20px 20px;
+    width: 600px;
+    height: 500px;
+    border-radius: 20px;
+}
+.holderTwo{
+    max-width: 1500px;
+    height: 500px;
+    border-radius: 20px;
+    background: #fff;
+    margin: 30px auto 0 auto;
+    margin-bottom: 30px;
+}
+.sideBar button{
+    width: 100px;
+    height: 30px;
+    font-size: 22px;
+    margin-top: 60px;
+    background: #000;
+    color: #fff;
+}
+.wrapper h1{
+    color: #292929;
+}
+/*Making website Responsive*/
+@media(max-width: 800px){
+    .holder{
+        width: 100%;
+    }
+    .holderTwo{
+        width: 100%;
+        margin: 0 20px 0 40px;
+    }
+    .sideBar button{
+        width: 150px;
+     }
+}
+@media(max-width: 1200px){
+    .holder{
+        width: 100%;
+    }
+    .top-information{
+        width: 100%;
+    }
+    .sideBar button{
+       width: 150px;
+    }
+    .holderTwo{
+        width: 100%;
+        margin: 0 20px 0 40px;
+    }
+}
+@media(max-width: 1000px){
+    .holder{
+        width: 100%;
+    }
+    .top-information{
+        width: 100%;
+    }
+    .sideBar button{
+       width: 150px;
+    }
+    .holderTwo{
+        width: 100%;
+        margin: 0 20px 0 40px;
+    } 
+}
+@media(max-width: 900px){
+    .holder{
+        width: 100%;
+        display: block;
+      
+    }
+}
+/*Responsive table*/
+@media(max-width: 500px){
+    .table thead{
+        display: none;
+    }
+    .table, .table tbody, .table tr, .table td{
+        display: block;
+        width: 100%;
+    }
+    .tbl-img {
+        height: 80px;
+        width: 80px;
+        border-radius: 100%;
+    }
+    .table tr{
+        margin-bottom: 15px;
+    }
+   .project-container{
+    width: 100%;
+   }
+    .table td{
+        text-align: right;
+        padding-left: 20%;
+        text-align: right;
+        position: relative;
+    }
+    .table td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+
+.error-text{
+    width: 250px;
+    height: 30px;
+    background: rgb(31, 204, 40);
+    margin: 10px auto 0 auto;
+    padding: 5px;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    display: none;
+}
+#projectName{
+    border: none;
+    background: none;
+    font-size: 30px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.dash-head{
+    display:flex;
+    font-family: 'Cormorant Garamond', serif;
+    margin-top: 5px;
+}
+.dash-head h1{
+  font-size: 45px;
+  color: rgb(0,0,56);
+  margin-right: 10px;
+
+}
+.dash-head h2{
+    font-size: 35px;
+    color: rgb(0,0,56);
+    margin-top: 10px;
+}
+#proj{
+    border: none;
+    background: none;
+    font-size: 30px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.project-view-btn{
+    border: none;
+    height: 20px;
+    width:80px;
+    background: blue;
+    color: #fff;
+   
+    margin-top: 5px;
+    margin-right: 5px;
+    
+}
